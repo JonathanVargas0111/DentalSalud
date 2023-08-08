@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+/* Variables de colores */
+$main-color: #00a8e8;
+/* Azul Claro */
+$secondary-color: #55d6c2;
+/* Verde Menta */
+$gray-color: #fcfafa;
+/* Gris Claro */
+$font-stack: "Montserrat", sans-serif;
+$font-header: "Md-serif", sans-serif;
+
+// Reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Main Styling
+html,
+body {
+    font-family: $font-stack;
+    color: $main-color;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h1,
+h2,
+h4 {
+    font-family: $font-header;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+    margin: 5px 0;
+    line-height: 1.7em;
+}
+
+a {
+    text-decoration: none;
+}
+
+// Utility Classes
+.container {
+    margin: 0 auto;
+    padding: 50px 10%;
+}
+
+.txt-small {
+    font-size: 1rem;
+}
+
+.display-1 {
+    font-size: 4rem;
+}
+
+.display-2 {
+    font-size: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 15px;
+    padding: 15px 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    background: $secondary-color;
+    color: white;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-fixed {
+    display: flex;
+}
+
+.flex-box {
+    flex: 1;
+}
+
+.mainheader {
+    background: $gray-color;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100vh;
+        height: 80vh;
+        top: 0;
+        background: $main-color;
+        border-radius: 50%;
+        transform-origin: bottom;
+        transform: translateX(-50%) scale(4);
+    }
+
+    &-content {
+        position: relative;
+        z-index: 1;
+        // max-width: 1000px;
+        text-align: center;
+
+        .navbar {
+            // padding: 30px 0;
+            padding-top: 50px;
+
+            a {
+                color: #fff;
+            }
+
+            .flex-fixed {
+                justify-content: space-between;
+            }
+
+            .txt-link {
+                margin-top: 6px;
+                border-bottom: 2px solid $secondary-color;
+            }
+        }
+
+        //End .navbar
+        .showcase {
+            padding-top: 50px;
+            padding-bottom: 30px;
+            text-align: center;
+            color: #fff;
+
+            span {
+                border-bottom: 5px solid $secondary-color;
+            }
+
+            h1 {
+                margin-bottom: 20px;
+            }
+
+            img {
+                margin-top: 40px;
+                height: 250px;
+            }
+        }
+    }
+
+    //End .mainheader-content
+}
+
+//End .mainheader
+// Features
+.features {
+    color: #000;
+
+    .flex-box {
+        margin: 20px;
+        text-align: center;
+
+        .txt-number span {
+            font-size: 20px;
+            border: 1px solid #000;
+            padding: 5px 12px;
+            border-radius: 50%;
+        }
+
+        h4 {
+            padding: 20px 0;
+        }
+    }
+
+    .about-section {
+        background-color: lighten($gray-color, 80%);
+
+        h2,
+        h4 {
+            color: $main-color;
+        }
+
+        text-align: center;
+
+        &__purpose {
+            display: flex;
+            flex-direction: row;
+        }
+
+    }
+
+    .service-section {
+        background-color: lighten($main-color, 50%);
+
+        h2,
+        h4 {
+            color: $main-color;
+        }
+    }
+
+
+    .team-section {
+        padding-top: 180px;
+        padding-bottom: 90px;
+        background: #fff;
+
+        &__card {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+            font-size: 2rem;
+
+            .team-section__img {
+                width: 300px;
+                height: 300px;
+                border: 20px solid $secondary-color;
+                border-radius: 100%;
+                overflow: hidden;
+                flex: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+    }
+
+
+    .contact-section {
+        background-color: $secondary-color;
+        font-weight: bold;
+        color: #fff;
+        text-align: left;
+
+        div {
+            margin: auto auto;
+            max-width: 50%;
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+}
+
+//End #features
+
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    .logo{
+        color: $main-color;
+        font-size: 3rem;
+    }
+    .social-fixed{
+        margin-top: 20px;
+        color: $main-color;
+        a{
+            margin: 10px;
+            font-size: 2.5rem;
+            color: $main-color;
+        }
+    }
+}
+
+.copy {
+    font-size: 1.2rem;
+    color: darken($main-color, 80%);
+    text-align: center;
+    padding: 10px;
+}
+
+@import 'mobile'
